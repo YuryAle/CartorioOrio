@@ -123,51 +123,65 @@ int main()
 	
 	int opcao=0;
 	int x=1;
-	
-	for (x=1;x=1;)
-	{
-	
-	system("cls");
+	char senhadigitada[]="a";
+	int comparacao;               //criar um inte para fazer a comparaçao de senha
 	
 	printf("-----Cartorio_Orio-----\n\n");
-	printf("\t1-Registrar Nome\n");
-	printf("\t2-Consultat Nome\n");
-	printf("\t3-Deletar Nome\n");
-	printf("\t4-Sair do Sistema\n");
-	printf("Opcao: ");
-	scanf("%d", &opcao);
+	printf("Login de Administrado!\n\nDigite sua Senha: \n");
+	scanf("%s", senhadigitada);
+	
+	comparacao = strcmp(senhadigitada, "admin"); //fazer a compara para seber se a senha esta correta
 	
 	system("cls");
 	
-	switch(opcao)
+	if(comparacao == 0)                          // se a comparação for igual a 0 irar entrar no sistema
 	{
-		case 1:
-		registrar();
-		break;
+	
+		for (x=1;x=1;)
+		{
+	
+			printf("-----Cartorio_Orio-----\n\n");
+			printf("\t1-Registrar Nome\n");
+			printf("\t2-Consultat Nome\n");
+			printf("\t3-Deletar Nome\n");
+			printf("\t4-Sair do Sistema\n");
+			printf("Opcao: ");
+			scanf("%d", &opcao);
+	
+			system("cls");
+	
+			switch(opcao)
+			{
+				case 1:
+				registrar();
+				break;
+			
+				case 2:
+				consultar();
+				break;
+			
+				case 3:
+				deletar();
+				break;
 		
-		case 2:
-		consultar();
-		break;
+				case 4:
+				printf("Obrigado por Utilizar o Sistema!\n");
+				return 0;      //sair do sistema
+				break;
 		
-		case 3:
-		deletar();
-		break;
-		
-		case 4:
-		printf("Obrigado por Utilizar o Sistema!\n");
-		return 0;      //sair do sistema
-		break;
-		
-		default:
-		printf("Opcao selecionada esta invalida!\n");
-		system("pause");
-		break;
+				default:
+				printf("Opcao selecionada esta invalida!\n");
+				system("pause");
+				break;
+			}	
+	
+	
+   		}
+	
 	}
 	
-	
-    }
-	
-	
-	
+	else
+		printf("Senha Incorreta");
+    	
 }
 
